@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :petal, Petal.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "dev",
+  password: "dev",
   hostname: "localhost",
   database: "petal_dev",
   stacktrace: true,
