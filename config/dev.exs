@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :petal, Petal.Repo,
-  username: "dev",
-  password: "dev",
+  username: "postgres",
+  password: "d4b1174d415640c98edc329353b5f012",
   hostname: "localhost",
   database: "petal_dev",
   stacktrace: true,
@@ -25,6 +25,14 @@ config :petal, PetalWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "61R5/hcBFhw2t7IEoimT8HDnamG0tiW83EwiQTO6NgVWKxDIzsmjXDFy9XwjEroV",
   watchers: [
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ],
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
